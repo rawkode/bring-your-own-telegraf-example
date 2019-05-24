@@ -5,7 +5,7 @@ workflow "Release Docker Image" {
 
 action "Docker Image Build" {
   uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
-  args = "image build -t rawkode/telegraf:kubernetes ."
+  args = "image build --build-arg VERSION=1.10 -t rawkode/telegraf:kubernetes ."
   runs = "docker"
 }
 
